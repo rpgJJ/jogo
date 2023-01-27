@@ -15,7 +15,7 @@ class Sprite{
       this.personEl.src = url;
 
       this.personEl.dataset.sprite = JSON.stringify({
-        'value' : value >= 3? 1: value +1
+        'value' : value >= 3? 0: value +1
       });
 
     },200);
@@ -29,6 +29,6 @@ class Sprite{
 
 }
 
-window.person1 = new Sprite(document.querySelector('#person1'), '../public/img/b#.png');
-window.person2 =new Sprite(document.querySelector('#person2'), '../public/img/inicio#.png');
-window.person3 =new Sprite(document.querySelector('#person3'), '../public/img/ela#.png');
+window.person1 = new Sprite(document.querySelector('#person1'), '../public/img/personagens/garoto/s/#.png');
+window.person2 =new Sprite(document.querySelector('#person2'), '../public/img/personagens/garoto/s/#.png');
+window.person3 =new Sprite(document.querySelector('#person3'), '../public/img/personagens/garoto/s/#.png');

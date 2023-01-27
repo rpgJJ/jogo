@@ -7,7 +7,7 @@
       this.sprite = 0
       this.formato = '.png'
       this.img = this.url+this.direcao+this.sprite+this.formato
-      this.vel = 5
+      this.vel = 10
       this.elemento={el:0,img:0}
       this.px
       this.py
@@ -49,8 +49,8 @@
       this.elemento.el = document.createElement('span');
       this.elemento.img = document.createElement('img');
       this.elemento.el.setAttribute('class','jogador');
-      this.elemento.el.style.top = '800px';
-      this.elemento.el.style.left = '300px';
+      this.elemento.el.style.top = '0px';
+      this.elemento.el.style.left = '0px';
       this.elemento.img.setAttribute('class','sprite');
       this.elemento.img.setAttribute('src',this.img);
       this.elemento.el.appendChild(this.elemento.img)

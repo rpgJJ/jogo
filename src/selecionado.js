@@ -1,13 +1,13 @@
-import {criaCenario} from './criaCenario.js';
 const select = document.querySelector('#confirm');
 select.addEventListener('click', e=>{
   const p =  document.querySelector('#person2');
   const body =  document.querySelector('body');
-  let text = person2._url
+  let text = p.getAttribute('src')
+
   const myArray = text.split("/");
-  let valor = myArray[3]
+  let valor = myArray[myArray.length-3]
   valor = valor.replace('#.png','')
   const section = document.querySelector('section')
   body.removeChild(section)
-  criaCenario(valor);
+  window.location.href = '/salaTeste.html?person='+valor
 });
