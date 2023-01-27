@@ -1,0 +1,31 @@
+@charset "utf-8";
+
+.cenario{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+}
+.obs{
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+}
+.obstaculo{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.jogador{
+  display: block;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+}
+.sprite{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+
