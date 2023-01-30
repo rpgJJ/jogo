@@ -1,8 +1,9 @@
 
 
    class Jogador {
-    constructor(){
-      this.url = 'public/img/personagens/garoto/'
+    constructor(personagem){
+      this.personagem = personagem
+      this.url = `public/img/personagens/${this.personagem}/`
       this.direcao = 'w/'
       this.sprite = 0
       this.formato = '.png'

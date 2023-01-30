@@ -29,6 +29,6 @@ class Sprite{
 
 }
 
-window.person1 = new Sprite(document.querySelector('#person1'), '../public/img/personagens/garoto/s/#.png');
+window.person1 = new Sprite(document.querySelector('#person1'), '../public/img/personagens/gato/s/#.png');
 window.person2 =new Sprite(document.querySelector('#person2'), '../public/img/personagens/garoto/s/#.png');
-window.person3 =new Sprite(document.querySelector('#person3'), '../public/img/personagens/garoto/s/#.png');
+window.person3 =new Sprite(document.querySelector('#person3'), '../public/img/personagens/gato/s/#.png');

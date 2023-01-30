@@ -22,7 +22,6 @@ class Cenario{
     const body = document.querySelector('body');
     const cenario = document.createElement('div');
     cenario.setAttribute('class','cenario');
-    alert(`x:${this.tamanhoX}y:${this.tamanhoY}`)
     cenario.style.height = this.tamanhoX+'px'
     cenario.style.width = this.tamanhoY+'px'
     body.appendChild(cenario);
