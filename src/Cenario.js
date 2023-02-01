@@ -29,29 +29,47 @@ class Cenario{
   }
   colisaoObs(px,py){
   }
-  limite(px,py,key){
-    const jogador = document.querySelector('.jogador')
+  limite(px,py,key,jogador){
     if(jogador.style.top== (-this.vel)+'px'){
       jogador.style.top = '0px'
       return
     }else if(jogador.style.left==(-this.vel)+'px'){
       jogador.style.left = '0px'
+
     }
     else if((this.tamanhoX-px==60)||(this.tamanhoX-px==50)){
-      if((key=='d')&&(this.tamanhoY-py==60)){
+
+      if((key=='d')||(key=='l')&&(this.tamanhoY-(py)==60)){
+
+        if((jogador.id=='jogador1')&&(this.tamanhoY-(py)>=60)){
+
+          if(this.tamanhoY-(py)==60){
+
+            jogador.style.left = (py-10)+'px'
+            return
+
+          }
+
+          jogador.style.left = (py)+'px'
+          return
+
+        }
+
         jogador.style.left = (py-10)+'px'
         return
+
+      }else{
+        
+        jogador.style.top = (px-10)+'px'
       }
-      jogador.style.top = (px-10)+'px'
-      console.log('opaa')
+
 
     }else if((this.tamanhoY-py==60)||(this.tamanhoY-py==50)){
-      console.log(py+'opaaaa')
       jogador.style.left = (py-10)+'px'
     }
 }
-  verifica(px,py,key){
-    this.limite(px,py,key)
+  verifica(px,py,key,jogador){
+    this.limite(px,py,key,jogador)
     this.colisaoObs(px,py)
   }
 }

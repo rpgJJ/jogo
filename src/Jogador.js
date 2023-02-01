@@ -1,7 +1,7 @@
 
 
    class Jogador {
-    constructor(personagem){
+    constructor(personagem,keys,j){
       this.personagem = personagem
       this.url = `public/img/personagens/${this.personagem}/`
       this.direcao = 'w/'
@@ -12,6 +12,15 @@
       this.elemento={el:0,img:0}
       this.px
       this.py
+      this.keys = keys
+      this.j = j
+      this.disparar = false
+      this.mun = {
+        el:0,
+        img:0,
+        src : 'public/img/armas/caveira.gif',
+        q:20
+      }
 
     }
     trocaImg(){
@@ -50,26 +59,54 @@
       this.elemento.el = document.createElement('span');
       this.elemento.img = document.createElement('img');
       this.elemento.el.setAttribute('class','jogador');
-      this.elemento.el.style.top = '0px';
-      this.elemento.el.style.left = '0px';
+      this.elemento.el.setAttribute('id','jogador'+this.j);
+      this.elemento.el.style.top = Math.floor(Math.random()*20)*20+'px';
+      this.elemento.el.style.left =  Math.floor(Math.random()*20)*20+'px';
       this.elemento.img.setAttribute('class','sprite');
       this.elemento.img.setAttribute('src',this.img);
       this.elemento.el.appendChild(this.elemento.img)
       cenario.appendChild(this.elemento.el)
 
     }
+    timer(){
+      let time = 1000
+      setTimeout(()=>{},time)
+    }
+    async movimentaMun(){
+      this
+    }
+    dispara(){
 
+      if(this.disparar==true&&this.mun.q>0){
+        this.disparar=false
+        this.mun.q-=1
+        const cenario = document.querySelector('.cenario');
+        this.mun.el = document.createElement('span');
+        this.mun.img = document.createElement('img');
+        this.mun.el.setAttribute('class','mun');
+        this.mun.el.setAttribute('id','mun'+this.j);
+        this.mun.el.style.top = this.px+'px'
+        this.mun.el.style.left =  this.py+'px'
+        this.mun.img.setAttribute('class','sprite');
+        this.mun.img.setAttribute('src', this.mun.src );
+        this.mun.el.appendChild( this.mun.img )
+        cenario.appendChild(this.mun.el)
+        movimentaMun()
+
+      }
+
+    }
     movimenta(key){
-      if(key=='w'){
+      if(key==this.keys.U){
         this.inseriDirecao = 'w/'
         this.inseriPx = -this.vel
-      }else if(key=='d'){
+      }else if(key==this.keys.R){
         this.inseriDirecao = 'd/'
         this.inseriPy = this.vel
-      }else if(key=='s'){
+      }else if(key==this.keys.D){
         this.inseriDirecao = 's/'
         this.inseriPx = this.vel
-      }else if(key=='a'){
+      }else if(key==this.keys.L){
         this.inseriDirecao = 'a/'
         this.inseriPy = -this.vel
       }
